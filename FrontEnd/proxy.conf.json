@@ -1,0 +1,6 @@
+"/api/*"{
+    "target": "https://backendzarate.herokuapp.com",
+    "secure": false,
+    "logLevel":"debug"
+
+}
