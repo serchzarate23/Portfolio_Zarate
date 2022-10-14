@@ -1,111 +1,45 @@
 <div class="row">
+
     <h1>Hard & Soft skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="95"
-            [radius]="100"
-            [imageSrc]="'../assets/html.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
+    <div class="col-lg-0">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
     </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="90"
-            [radius]="100"
-            [imageSrc]="'../assets/css.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="80"
-            [radius]="100"
-            [imageSrc]="'../assets/js.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="65"
-            [radius]="100"
-            [imageSrc]="'../assets/git.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="70"
-            [radius]="100"
-            [imageSrc]="'../assets/eng.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="100"
-            [radius]="100"
-            [imageSrc]="'../assets/grupal.png'"
-            [showImage]="true"
-            [imageHeight]="90"
-            [imageWidth]="90"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
+
+
+    <div class="text-center col-sm-2 col-md-2 col-lg-2 circulo" *ngFor="let skill of skill">
+        <circle-progress 
+        [percent]="(skill.porcentaje)" 
+        [radius]="80" [imageSrc]="''" 
+        [title]="(skill.nombre)"
+        [titleColor]="'#212F3C'"
+        [showTitle]="true" 
+        [showImage]="false" 
+        [imageHeight]="50" 
+        [imageWidth]="50" 
+        [showUnits]="false"
+        [showSubtitle]="false" 
+        [outerStrokeWidth]="16" 
+        [innerStrokeWidth]="2" 
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'" 
+        [animation]="true" 
+        [animationDuration]="600">
+        </circle-progress>
+
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                      </svg></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg></button>
+            </td>
+        </div>
+        
     </div>
 </div>
