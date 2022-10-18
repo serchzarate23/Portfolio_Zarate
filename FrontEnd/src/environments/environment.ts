@@ -3,10 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    projectId: 'finalzarate',
+    appId: '1:559345708363:web:b2d31f51cbfe98a2e60cce',
+    storageBucket: 'finalzarate.appspot.com',
+    locationId: 'southamerica-east1',
+    apiKey: 'AIzaSyCQDWVnLJVAiQBYS91WmyC9vBxoBf012yQ',
+    authDomain: 'finalzarate.firebaseapp.com',
+    messagingSenderId: '559345708363',
+  },
 
-  production: false,
-  //URL: 'http://localhost:8080/'
-  URL: 'https://backendzarate.herokuapp.com/'
+  production: true,
+  URL: 'http://localhost:8080/'
 };
 
 /*
